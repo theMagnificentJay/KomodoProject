@@ -31,6 +31,11 @@ namespace GoldBadgeApplicationChallenge._02_KomodoClaims
                 return false;
         }
 
+        public Claims PeekNextClaim()
+        {
+            return _claims.Peek();
+        }
+
         // NewClaim
         public bool AddClaim(Claims newClaim)
         {

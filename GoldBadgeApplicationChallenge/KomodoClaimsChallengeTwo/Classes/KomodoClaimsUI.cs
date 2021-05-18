@@ -39,9 +39,11 @@ namespace GoldBadgeApplicationChallenge._02_KomodoClaims
                         break;
                     case "2":
                         // NextClaim
+                        NextClaim();
                         break;
                     case "3":
                         // NewClaim
+                        NewClaim();
                         break;
                     case "4":
                         // Exit
@@ -77,12 +79,91 @@ namespace GoldBadgeApplicationChallenge._02_KomodoClaims
 
         private void NextClaim()
         {
+            Console.Clear();
+            KomodoTitle();
+            Console.WriteLine();
+            Claims claim = _repo.PeekNextClaim();
 
+            string headerSize = "{0,-10}{1,-10}{2,-30}{3,-15}{4,-20}{5,-15}{6,-10}";
+            Console.Write("\t");
+            Console.Write(headerSize, "ClaimID", "Type", "Description", "Amount", "DateOfAccident", "DateOfClaim", "IsValid\n\n");
+            Console.Write("\t");
+            Console.Write(headerSize, $"{claim.ClaimID}", $"{claim.ClaimType}", $"{claim.Description}", $"${claim.ClaimAmount}", $"{claim.DateOfIncident.ToString("MM/dd/yy")}", $"{claim.DateOfClaim.ToString("MM/dd/yy")}", $"{claim.IsValid}\n\n");
+
+            Console.WriteLine("\n\tDo you want to deal with this claim now(y/n)?");
+            string input = Console.ReadLine().ToLower();
+            if (input == "y" || input == "yes")
+            {
+                _repo.NextClaim(claim);
+                return;
+            }
+            else if (input == "n" || input == "no")
+                return;
+            else
+                NextClaim();
         }
 
         private void NewClaim()
         {
+            Console.Clear();
+            KomodoTitle();
+            Console.WriteLine();
+            Claims newClaim = new Claims();
+            Console.WriteLine($"\n\tEnter the claim ID: ");
+            newClaim.ClaimID = Convert.ToInt32(Console.ReadLine());
+            bool choosingType = true;
+            while (choosingType)
+            {
+            Console.WriteLine($"\n\tEnter the claim type:\n" +
+                $"\t1. Car\n" +
+                $"\t2. Home\n" +
+                $"\t3. Theft\n");
+                int input = Convert.ToInt32(Console.ReadLine());
+                switch(input)
+                {
+                    case 1:
+                        newClaim.ClaimType = (ClaimType)1;
+                        choosingType = false;
+                        break;
+                    case 2:
+                        newClaim.ClaimType = (ClaimType)2;
+                        choosingType = false;
+                        break;
+                    case 3:
+                        newClaim.ClaimType = (ClaimType)3;
+                        choosingType = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine($"\n\tEnter the claim description: ");
+            newClaim.Description = Console.ReadLine();
+            Console.WriteLine($"\n\tEnter amount of damage: (e.g. 1.00)");
+            newClaim.ClaimAmount = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine($"\n\tEnter the date of the incident: (mm/dd/yyyy)");
+            newClaim.DateOfIncident = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine($"\n\tEnter the date of the claim: (mm/dd/yyyy)");
+            newClaim.DateOfClaim = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine();
+            _repo.AddClaim(newClaim);
 
+            Console.Clear();
+            KomodoTitle();
+            Console.WriteLine();
+            bool wasUpdated = _repo.AddClaim(newClaim);
+            if (wasUpdated)
+            {
+                Console.WriteLine("\n\tAdded the following claim to queue...\n");
+                string headerSize = "{0,-10}{1,-10}{2,-30}{3,-15}{4,-20}{5,-15}{6,-10}";
+                Console.Write("\t");
+                Console.Write(headerSize, "ClaimID", "Type", "Description", "Amount", "DateOfAccident", "DateOfClaim", "IsValid\n\n");
+                Console.Write("\t");
+                Console.Write(headerSize, $"{newClaim.ClaimID}", $"{newClaim.ClaimType}", $"{newClaim.Description}", $"${newClaim.ClaimAmount}", $"{newClaim.DateOfIncident.ToString("MM/dd/yy")}", $"{newClaim.DateOfClaim.ToString("MM/dd/yy")}", $"{newClaim.IsValid}\n\n");
+            }
+            else
+                Console.WriteLine("\n\tThe claim could not be added.");
+            Continue();
         }
 
         // Helper Methods
