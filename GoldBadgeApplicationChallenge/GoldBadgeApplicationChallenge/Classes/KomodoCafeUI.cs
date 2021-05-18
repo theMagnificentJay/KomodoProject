@@ -46,7 +46,7 @@ namespace GoldBadgeApplicationChallenge
                         Console.Clear();
                         keepRunning = false;
                         KomodoTitle();
-                        Console.WriteLine("\n\tThanks for visiting, enjoy the rest of your day!");
+                        Console.WriteLine("\n\tExiting Komodo Cafe...");
                         Thread.Sleep(1000); // sleep 1s
                         break;
                     default:
@@ -326,6 +326,7 @@ namespace GoldBadgeApplicationChallenge
                 Console.WriteLine("\n\n\tMeal could not be deleted.");
         }
 
+        // Seeded Content
         private void SeedContentMeals()
         {
             Meal burger = new Meal(1, "Burger", "Sandwich consisting of a cooked beef patty, placed inside a bun.", new List<string> { "bun", "beef" }, 9.99);

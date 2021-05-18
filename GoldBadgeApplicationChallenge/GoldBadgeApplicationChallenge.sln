@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoCafeChallengeOne", "GoldBadgeApplicationChallenge\KomodoCafeChallengeOne.csproj", "{02B6F6B1-3AEA-418D-BE45-762D4E30A874}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_01_KomodoCafeChallengeOne", "GoldBadgeApplicationChallenge\_01_KomodoCafeChallengeOne.csproj", "{02B6F6B1-3AEA-418D-BE45-762D4E30A874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_02_KomodoClaimsChallengeTwo", "KomodoClaimsChallengeTwo\_02_KomodoClaimsChallengeTwo.csproj", "{B2003F42-B6B5-48C2-833C-F23B28CF66FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03_KomodoBadgeChallengeThree", "KomodoBadgeChallengeThree\_03_KomodoBadgeChallengeThree.csproj", "{EB0BECE0-2A69-469F-8AB6-276F102A6A63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_00_KomodoRun", "_00_KomodoRun\_00_KomodoRun.csproj", "{B673C365-1163-42FB-8AFD-A1976311BA17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Run", "_Run", "{CB137F78-49DC-48EF-B1DF-5400AF7E448A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KomodoAssemblies", "KomodoAssemblies", "{D20EF5EE-7885-4635-87E8-708A25BF0BE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,27 @@ Global
 		{02B6F6B1-3AEA-418D-BE45-762D4E30A874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02B6F6B1-3AEA-418D-BE45-762D4E30A874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B6F6B1-3AEA-418D-BE45-762D4E30A874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2003F42-B6B5-48C2-833C-F23B28CF66FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2003F42-B6B5-48C2-833C-F23B28CF66FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2003F42-B6B5-48C2-833C-F23B28CF66FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2003F42-B6B5-48C2-833C-F23B28CF66FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0BECE0-2A69-469F-8AB6-276F102A6A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0BECE0-2A69-469F-8AB6-276F102A6A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0BECE0-2A69-469F-8AB6-276F102A6A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0BECE0-2A69-469F-8AB6-276F102A6A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B673C365-1163-42FB-8AFD-A1976311BA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B673C365-1163-42FB-8AFD-A1976311BA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B673C365-1163-42FB-8AFD-A1976311BA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B673C365-1163-42FB-8AFD-A1976311BA17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02B6F6B1-3AEA-418D-BE45-762D4E30A874} = {D20EF5EE-7885-4635-87E8-708A25BF0BE6}
+		{B2003F42-B6B5-48C2-833C-F23B28CF66FE} = {D20EF5EE-7885-4635-87E8-708A25BF0BE6}
+		{EB0BECE0-2A69-469F-8AB6-276F102A6A63} = {D20EF5EE-7885-4635-87E8-708A25BF0BE6}
+		{B673C365-1163-42FB-8AFD-A1976311BA17} = {CB137F78-49DC-48EF-B1DF-5400AF7E448A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D959F066-0B82-40AE-919A-E1E52840850F}

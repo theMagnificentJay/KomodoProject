@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 
 namespace GoldBadgeApplicationChallenge._02_KomodoClaims
 {
-    public enum ClaimType { Car, House, Theft }
+    public enum ClaimType { Car = 1, Home, Theft }
     public class Claims
     {
         public int ClaimID { get; set; }
         public ClaimType ClaimType { get; set; }
         public string Description { get; set; }
-        public double ClaimAmount { get; set; }
+        public decimal ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
         public DateTime DateOfClaim { get; set; }
         public bool IsValid
         {
             get
             {
-                if ()
+                if (DateOfClaim.Month > (DateOfIncident.Month + 1))
                 {
-
+                    return false;
                 }
+                else
+                    return true;
             }
         }
 
         public Claims() { }
-        public Claims(int id, ClaimType claimType, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
+        public Claims(int id, ClaimType claimType, string description, decimal claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
         {
             ClaimID = id;
             ClaimType = claimType;
