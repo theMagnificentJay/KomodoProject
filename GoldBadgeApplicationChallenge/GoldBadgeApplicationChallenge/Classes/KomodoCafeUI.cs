@@ -83,17 +83,13 @@ namespace GoldBadgeApplicationChallenge
                         }
                         Console.WriteLine();
                     }
-                    Console.WriteLine("\n\n\tPlease input the meal number you would like to order.");
-                    Console.ReadLine();
-                    // AddToOrder method HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    Continue();
                 }
                 else if (input.ToLower() == "n" || input.ToLower() == "no")
                 {
                     Console.Clear();
                     KomodoTitle();
-                    Console.WriteLine("\n\tPlease input the meal number you would like to order.");
-                    Console.ReadLine();
-                    // AddToOrder method HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    Continue();
                 }
                 else if (input.ToLower() == "x" || input.ToLower() == "exit")
                 {
