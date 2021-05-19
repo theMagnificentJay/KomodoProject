@@ -64,7 +64,7 @@ namespace _00_KomodoRun
                         break;
                     case "3":
                         Console.WriteLine("Komodo Badges");
-                        // badgesUI.Run();
+                        badgesUI.Run();
                         break;
                     case "4":
                         keepRunning = false;

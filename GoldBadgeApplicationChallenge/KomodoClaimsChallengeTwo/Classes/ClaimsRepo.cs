@@ -10,7 +10,7 @@ namespace GoldBadgeApplicationChallenge._02_KomodoClaims
     {
         public readonly Queue<Claims> _claims = new Queue<Claims>();
 
-        // CRUD w/ view[], remove/next[], add[] - in the menu list
+        // CRUD w/ view[x], remove/next[x], add[x] - in the menu list
 
         // ViewClaims
         public Queue<Claims> ViewClaims()
