@@ -19,17 +19,6 @@ namespace Tests
         }
 
         [TestMethod]
-        public void ViewMeals_ShouldReturnMeals()
-        {
-            Meal meal = new Meal();
-            MealRepo _repo = new MealRepo();
-            _repo.AddMealToMenu(meal);
-            List<Meal> allMeals = _repo.ViewMealMenu();
-            bool mealInList = allMeals.Contains(meal);
-            Assert.IsTrue(mealInList);
-        }
-
-        [TestMethod]
         public void UpdateMeal_ShouldReturnUpdated()
         {
             Meal meal = new Meal();
@@ -50,6 +39,17 @@ namespace Tests
             bool value;
             value = _repo.DeleteMealFromMenu("burger");
             Assert.IsTrue(value);
+        }
+
+        [TestMethod]
+        public void ViewMeals_ShouldReturnMeals()
+        {
+            Meal meal = new Meal();
+            MealRepo _repo = new MealRepo();
+            _repo.AddMealToMenu(meal);
+            List<Meal> allMeals = _repo.ViewMealMenu();
+            bool mealInList = allMeals.Contains(meal);
+            Assert.IsTrue(mealInList);
         }
     }
 }
