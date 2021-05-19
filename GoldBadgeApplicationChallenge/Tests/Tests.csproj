@@ -62,6 +62,14 @@
       <Project>{02B6F6B1-3AEA-418D-BE45-762D4E30A874}</Project>
       <Name>_01_KomodoCafeChallengeOne</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KomodoBadgeChallengeThree\_03_KomodoBadgeChallengeThree.csproj">
+      <Project>{EB0BECE0-2A69-469F-8AB6-276F102A6A63}</Project>
+      <Name>_03_KomodoBadgeChallengeThree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KomodoClaimsChallengeTwo\_02_KomodoClaimsChallengeTwo.csproj">
+      <Project>{B2003F42-B6B5-48C2-833C-F23B28CF66FE}</Project>
+      <Name>_02_KomodoClaimsChallengeTwo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
