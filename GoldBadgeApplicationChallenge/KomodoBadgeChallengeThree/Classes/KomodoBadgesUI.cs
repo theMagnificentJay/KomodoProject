@@ -38,13 +38,16 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
                         break;
                     case 2:
                         // EditBadge
+                        EditBadge();
                         break;
                     case 3:
                         // ViewBadges
                         ViewBadges();
+                        Continue();
                         break;
                     case 4:
                         Console.Clear();
+                        KomodoTitle();
                         Console.WriteLine("\n\n\t Exiting Komodo Badges...");
                         Thread.Sleep(1000); // sleep 1s
                         keepRunning = false;
@@ -73,15 +76,101 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
             Console.WriteLine("\tKey\n");
             Console.Write("\t");
             Console.Write(headerSize, "Badge #", "Door Access\n");
-                Console.Write("\n\t");
-                string doorList = "";
-                foreach (string door in badge.DoorAccess)
-                {
-                    doorList += door + " ";
-                }
-                Console.Write(headerSize, $"{badge.BadgeID}", doors);
-                Console.WriteLine();
+            Console.Write("\n\t");
+            string doorList = "";
+            foreach (string door in badge.DoorAccess)
+            {
+                doorList += door + " ";
+            }
+            Console.Write(headerSize, $"{badge.BadgeID}", doors);
+            Console.WriteLine();
             Continue();
+        }
+
+        private void EditBadge()
+        {
+            Console.Clear();
+            KomodoTitle();
+            ViewBadges();
+            // get key
+            Console.WriteLine("\n\n\tWhat is the badge number to update?");
+            int key = Convert.ToInt32(Console.ReadLine());
+
+            // display badge
+
+            // adding door?
+            bool editing = true;
+            while (editing)
+            {
+                Console.WriteLine("\n\n\tWhat would you like to do?\n\n" +
+                    "\t1. Remove a door.\n" +
+                    "\t2. Add a door.\n");
+                int input = Convert.ToInt32(Console.ReadLine());
+
+                if (input == 1)
+                {
+                    bool adding = false;
+                    Console.WriteLine("\n\n\tDoor to remove:");
+                    string value = Console.ReadLine();
+
+                    _repo.EditBadge(key, value, adding);
+
+                    Console.WriteLine("Any other doors(y/n)?");
+                    string again = Console.ReadLine();
+                    switch (again)
+                    {
+                        case "y":
+                        case "yes":
+                            Console.Clear();
+                            KomodoTitle();
+                            ViewBadges();
+                            break;
+                        case "n":
+                        case "no":
+                            Console.Clear();
+                            editing = false;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if (input == 2)
+                {
+                    bool adding = true;
+                    Console.WriteLine("\n\n\tDoor to add:");
+                    string value = Console.ReadLine();
+
+                    _repo.EditBadge(key, value, adding);
+
+                    Console.WriteLine("Any other doors(y/n)?");
+                    string again = Console.ReadLine();
+                    switch (again)
+                    {
+                        case "y":
+                        case "yes":
+                            Console.Clear();
+                            KomodoTitle();
+                            ViewBadges();
+                            break;
+                        case "n":
+                        case "no":
+                            Console.Clear();
+                            editing = false;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                    return;
+                // conditional here
+
+                // get value - door
+            }
+            Console.Clear();
+            KomodoTitle();
+            Console.WriteLine("\n\n\tReturning to menu...");
+            Thread.Sleep(1000); // sleep 1s
         }
 
         private void ViewBadges()
@@ -99,12 +188,11 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
                 string doors = "";
                 foreach (string door in badge.Value)
                 {
-                    doors += door+" ";
+                    doors += door + " ";
                 }
                 Console.Write(headerSize, $"{badge.Key}", doors);
                 Console.WriteLine();
             }
-            Continue();
         }
 
         private void KomodoTitle()

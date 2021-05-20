@@ -21,16 +21,19 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
             _badgeDictionary.Add(key, value);
         }
 
-        public bool EditBadge(Badge badgeToEdit, Badge newBadge)
+        public bool EditBadge(int key, string value, bool adding)
         {
-            if (badgeToEdit != null)
+            List<string> list = _badgeDictionary[key];
+            if (adding)
             {
-                badgeToEdit.BadgeID = newBadge.BadgeID;
-                badgeToEdit.DoorAccess = newBadge.DoorAccess;
+                list.Add(value);
                 return true;
             }
             else
+            {
+                list.Remove(value);
                 return false;
+            }
         }
     }
 }
