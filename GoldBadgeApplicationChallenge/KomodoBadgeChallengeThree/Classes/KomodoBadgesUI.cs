@@ -65,7 +65,7 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
             Console.WriteLine("\n\n\tEnter Badge ID: (e.g. 1234)");
             badge.BadgeID = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\n\n\tEnter the doors this badge has access to (seperated by spaces): (e.g. A1 A2 A3)");
-            string doors = Console.ReadLine();
+            string doors = Console.ReadLine().ToUpper();
             badge.DoorAccess = doors.Split(' ').ToList();
             _repo.AddNewBadge(badge.BadgeID, badge.DoorAccess);
 
@@ -102,6 +102,9 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
             bool editing = true;
             while (editing)
             {
+                Console.Clear();
+                KomodoTitle();
+                ViewBadges();
                 Console.WriteLine("\n\n\tWhat would you like to do?\n\n" +
                     "\t1. Remove a door.\n" +
                     "\t2. Add a door.\n");
@@ -110,8 +113,11 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
                 if (input == 1)
                 {
                     bool adding = false;
+                    Console.Clear();
+                    KomodoTitle();
+                    ViewBadges();
                     Console.WriteLine("\n\n\tDoor to remove:");
-                    string value = Console.ReadLine();
+                    string value = Console.ReadLine().ToUpper();
 
                     _repo.EditBadge(key, value, adding);
 
@@ -121,9 +127,6 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
                     {
                         case "y":
                         case "yes":
-                            Console.Clear();
-                            KomodoTitle();
-                            ViewBadges();
                             break;
                         case "n":
                         case "no":
@@ -137,8 +140,11 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
                 else if (input == 2)
                 {
                     bool adding = true;
+                    Console.Clear();
+                    KomodoTitle();
+                    ViewBadges();
                     Console.WriteLine("\n\n\tDoor to add:");
-                    string value = Console.ReadLine();
+                    string value = Console.ReadLine().ToUpper();
 
                     _repo.EditBadge(key, value, adding);
 
@@ -148,9 +154,6 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
                     {
                         case "y":
                         case "yes":
-                            Console.Clear();
-                            KomodoTitle();
-                            ViewBadges();
                             break;
                         case "n":
                         case "no":
@@ -163,9 +166,6 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
                 }
                 else
                     return;
-                // conditional here
-
-                // get value - door
             }
             Console.Clear();
             KomodoTitle();
