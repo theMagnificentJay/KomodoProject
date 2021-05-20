@@ -106,7 +106,6 @@ namespace GoldBadgeApplicationChallenge
                     Console.WriteLine("\n\tPlease enter a valid option.");
                     Thread.Sleep(1000); // sleep 1s
                 }
-
             }
         }
 

@@ -13,7 +13,7 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
         public BadgesRepo _repo = new BadgesRepo();
         public void Run()
         {
-            //SeededContentClaims();
+            SeededList();
             Menu();
         }
 
@@ -23,6 +23,7 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
             while (keepRunning)
             {
                 Console.Clear();
+                KomodoTitle();
                 Console.WriteLine("\n\n\tChoose an option:\n" +
                     "\t1. Add a Badge\n" +
                     "\t2. Edit a Badge\n" +
@@ -56,6 +57,7 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
         private void AddBadge()
         {
             Console.Clear();
+            KomodoTitle();
             Badge badge = new Badge();
             Console.WriteLine("\n\n\tEnter Badge ID: (e.g. 1234)");
             badge.BadgeID = Convert.ToInt32(Console.ReadLine());
@@ -63,20 +65,93 @@ namespace GoldBadgeApplicationChallenge._03_KomodoBadges
             string doors = Console.ReadLine();
             badge.DoorAccess = doors.Split(' ').ToList();
             _repo.AddNewBadge(badge.BadgeID, badge.DoorAccess);
+
+            Console.Clear();
+            KomodoTitle();
+            Console.WriteLine("\tAdded new badge with following information:");
+            string headerSize = "{0,-15}{1,-25}";
+            Console.WriteLine("\tKey\n");
+            Console.Write("\t");
+            Console.Write(headerSize, "Badge #", "Door Access\n");
+                Console.Write("\n\t");
+                string doorList = "";
+                foreach (string door in badge.DoorAccess)
+                {
+                    doorList += door + " ";
+                }
+                Console.Write(headerSize, $"{badge.BadgeID}", doors);
+                Console.WriteLine();
+            Continue();
         }
 
         private void ViewBadges()
         {
+            Console.Clear();
+            KomodoTitle();
             Dictionary<int, List<string>> allBadges = _repo.ViewBadges();
+            string headerSize = "{0,-15}{1,-25}";
+            Console.WriteLine("\tKey\n");
+            Console.Write("\t");
+            Console.Write(headerSize, "Badge #", "Door Access\n");
             foreach (var badge in allBadges)
             {
-                Console.Write($"\n\tID: {badge.Key} Doors: ");
+                Console.Write("\n\t");
+                string doors = "";
                 foreach (string door in badge.Value)
                 {
-                    Console.Write($"{door} ");
+                    doors += door+" ";
                 }
+                Console.Write(headerSize, $"{badge.Key}", doors);
+                Console.WriteLine();
             }
+            Continue();
+        }
+
+        private void KomodoTitle()
+        {
+            string title = @"
+        
+              :::    ::: ::::::::    :::   :::    ::::::::  :::::::::   ::::::::   
+             :+:   :+: :+:    :+:  :+:+: :+:+:  :+:    :+: :+:    :+: :+:    :+:   
+            +:+  +:+  +:+    +:+ +:+ +:+:+ +:+ +:+    +:+ +:+    +:+ +:+    +:+    
+           +#++:++   +#+    +:+ +#+  +:+  +#+ +#+    +:+ +#+    +:+ +#+    +:+     
+          +#+  +#+  +#+    +#+ +#+       +#+ +#+    +#+ +#+    +#+ +#+    +#+      
+         #+#   #+# #+#    #+# #+#       #+# #+#    #+# #+#    #+# #+#    #+#       
+        ###    ### ########  ###       ###  ########  #########   ########         
+                  :::::::::      :::     :::::::::   ::::::::  :::::::::: :::::::: 
+                 :+:    :+:   :+: :+:   :+:    :+: :+:    :+: :+:       :+:    :+: 
+                +:+    +:+  +:+   +:+  +:+    +:+ +:+        +:+       +:+         
+               +#++:++#+  +#++:++#++: +#+    +:+ :#:        +#++:++#  +#++:++#++   
+              +#+    +#+ +#+     +#+ +#+    +#+ +#+   +#+# +#+              +#+    
+             #+#    #+# #+#     #+# #+#    #+# #+#    #+# #+#       #+#    #+#     
+            #########  ###     ### #########   ########  ########## ########       
+
+            ";
+            Console.WriteLine(title);
+        }
+
+        private void Continue()
+        {
+            Console.WriteLine("\n\n\tPress any key to continue...");
             Console.ReadKey();
+        }
+
+        private void SeededList()
+        {
+            Badge bOne = new Badge();
+            bOne.BadgeID = 12345;
+            bOne.DoorAccess = new List<string>() { "A7" };
+            _repo.AddNewBadge(bOne.BadgeID, bOne.DoorAccess);
+
+            Badge bTwo = new Badge();
+            bTwo.BadgeID = 22345;
+            bTwo.DoorAccess = new List<string>() { "A1", "A4", "B1", "B2" };
+            _repo.AddNewBadge(bTwo.BadgeID, bTwo.DoorAccess);
+
+            Badge bThree = new Badge();
+            bThree.BadgeID = 32345;
+            bThree.DoorAccess = new List<string>() { "A4", "A5" };
+            _repo.AddNewBadge(bThree.BadgeID, bThree.DoorAccess);
         }
     }
 }
