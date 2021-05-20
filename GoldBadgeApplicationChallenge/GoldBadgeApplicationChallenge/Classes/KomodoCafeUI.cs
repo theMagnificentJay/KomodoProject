@@ -111,7 +111,7 @@ namespace GoldBadgeApplicationChallenge
 
         private void Settings()
         {
-            Console.WriteLine("\n\tPassword: ");
+            Console.WriteLine("\n\tPassword: (password is 'admin')");
             string password = null;
             while (true)
             {
