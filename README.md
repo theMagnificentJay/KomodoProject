@@ -36,6 +36,8 @@ Each ui is nested in its own while loop, so when you exit one you return to the 
 
 While the project is due 05/20/2021, once I finish my current course and when time allows I plan on refactoring old projects to continue my learning and skills. You can track the latest commits with the shield.io badge in this section. Add to your watch list and star this repo to stay up-to-date!
 
+![watch](https://github.com/theMagnificentJay/KomodoProject/blob/main/img/githubWatch.png?raw=true)
+
 ## Author
 
 [![github](https://img.shields.io/badge/GitHub-theMagnificentJay-10?style=flat&logo=GitHub&logoColor=white)](https://github.com/theMagnificentJay)
