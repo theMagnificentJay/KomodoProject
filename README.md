@@ -1,5 +1,8 @@
 # KomodoProject
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/theMagnificentJay/KomodoProject)
+![GitHub last commit](https://img.shields.io/github/last-commit/theMagnificentJay/KomodoProject)
+![GitHub all releases](https://img.shields.io/github/downloads/theMagnificentJay/KomodoProject/total)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/theMagnificentJay/KomodoProject)
 ![Lines of code](https://img.shields.io/tokei/lines/github.com/theMagnificentJay/KomodoProject)
 ![GitHub top language](https://img.shields.io/github/languages/top/theMagnificentJay/KomodoProject)
@@ -25,10 +28,13 @@ Each ui is nested in its own while loop, so when you exit one you return to the 
 
 ## Project Status
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/theMagnificentJay/KomodoProject)
 ![GitHub last commit](https://img.shields.io/github/last-commit/theMagnificentJay/KomodoProject)
+![GitHub all releases](https://img.shields.io/github/downloads/theMagnificentJay/KomodoProject/total)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/theMagnificentJay/KomodoProject)
+![GitHub issues](https://img.shields.io/github/issues/theMagnificentJay/KomodoProject)
 
-While the project is due 05/20/2021, once I finish my current course and when time allows I plan on refactoring old projects to continue my learning and skills. You can track the latest commits with the shield.io badge in this section.
+While the project is due 05/20/2021, once I finish my current course and when time allows I plan on refactoring old projects to continue my learning and skills. You can track the latest commits with the shield.io badge in this section. Add to your watch list and star this repo to stay up-to-date!
 
 ## Author
 
