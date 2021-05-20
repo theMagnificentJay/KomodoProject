@@ -17,6 +17,18 @@ Using a terminal of your choice with [**git**](https://git-scm.com/) installed, 
 git clone https://github.com/theMagnificentJay/KomodoProject.git
 ```
 
+Alternatively if you like to use your mouse, you can click the green *'Code'* button in the top right and click the copy to clipboard button. Example below:
+
+![img](https://github.com/theMagnificentJay/KomodoProject/blob/main/img/gitClone.png?raw=true)
+
+Then using your terminal of choice type:
+
+```bash
+git clone
+```
+
+Then press 'ctrl + v' to paste the copied link - press enter and you have accomplished the same process.
+
 ## Structure
 
 Komodo Project is divided into three solution folders, '_\_Run_', '_KomodoAssemblies_', and '_KomodoTests_'.
